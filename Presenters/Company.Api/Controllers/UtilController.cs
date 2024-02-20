@@ -56,11 +56,6 @@ namespace Login.Api.Controllers
                     SmsTemplate = "Dear User, Your OTP is " + otp + " . Please do not share the OTP with anyone. Have a good day!  Thank you, Marg Books"
                 };
 
-                //----On if queue is 1
-                //QueueManager queueManager = new();
-                //var message = Newtonsoft.Json.JsonConvert.SerializeObject(smsCreatedEvent);
-                //queueManager.SendDataInQueue("sms.created.event", message, EnumBusConnection.Notification);
-
                 var isOTPGenerated = SMSClient.sendSMSFromVduit(smsCreatedEvent);
                 if (isOTPGenerated)
                 {

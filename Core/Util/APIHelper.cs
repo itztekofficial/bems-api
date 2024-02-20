@@ -83,7 +83,7 @@ namespace Core.Util
             };
             request.AddJsonBody(data);
 
-            var response = client.Execute(request);
+            var response = await client.ExecuteAsync(request);
             return response;
         }
 

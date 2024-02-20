@@ -35,7 +35,7 @@ namespace Company.Api
             });
 
             services.AddTransient<IMemoryStreamManager, MemoryStreamManager>();
-         //   services.AddTransient<IUnitOfWork, UnitOfWork>();
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
 
             services.AddTransient<IUtilityRepository, UtilityRepository>();
             services.AddTransient<IUtilityService, UtilityService>();
@@ -43,14 +43,14 @@ namespace Company.Api
             services.AddTransient<IInitiationDetailRepository, InitiationDetailRepository>();
             services.AddTransient<IInitiationDetailService, InitiationDetailService>();
 
-           // services.AddTransient<ICompanyDashBoardRepository, CompanyDashBoardRepository>();
+            services.AddTransient<ICompanyDashBoardRepository, CompanyDashBoardRepository>();
             services.AddTransient<ICompanyDashBoardService, CompanyDashBoardService>();
 
             services.AddTransient<IRequestApprovalRepository, RequestApprovalRepository>();
             services.AddTransient<IRequestApprovalService, RequestApprovalService>();
 
-            //services.AddTransient<IReportRepository, ReportRepository>();  Commented by Manoj 
-            //services.AddTransient<IReportService, ReportService>();
+            services.AddTransient<IReportRepository, ReportRepository>();
+            services.AddTransient<IReportService, ReportService>();
 
             services.AddTransient<INotificationRepository, NotificationRepository>();
             services.AddTransient<INotificationService, NotificationService>();
