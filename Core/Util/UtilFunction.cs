@@ -15,7 +15,6 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
-using Util;
 
 namespace Core.Util
 {
@@ -1187,25 +1186,6 @@ namespace Core.Util
         }
 
         /// <summary>
-        /// Deserializes the from byte.
-        /// </summary>
-        /// <param name="serializedObj">The serialized obj.</param>
-        /// <returns>A T.</returns>
-        public static T DeserializeFromByte<T>(byte[] serializedObj)
-        {
-            T obj = default;
-            using (MemoryStream memStream = new(serializedObj))
-            {
-                BinaryFormatter binSerializer = new()
-                {
-                    Binder = new BindChanger()
-                };
-                obj = (T)binSerializer.Deserialize(memStream);
-            }
-            return obj;
-        }
-
-        /// <summary>
         /// Isvalids the phoneno.
         /// </summary>
         /// <param name="s">The s.</param>
@@ -1564,54 +1544,6 @@ namespace Core.Util
                 while ((read = input.Read(buffer, 0, buffer.Length)) > 0)
                 {
                     ms.Write(buffer, 0, read);
-                }
-                return ms.ToArray();
-            }
-        }
-
-        /// <summary>
-        /// Sends blob to storage.
-        /// </summary>
-        /// <param name="data">byte[]</param>
-        /// <param name="extension">string</param>
-        /// <param name="fileName">string</param>
-        /// <returns>string</returns>
-        public static string SendToStorage(byte[] data, string extension, string fileName = "")
-        {
-            fileName = !string.IsNullOrEmpty(fileName) ? fileName : Guid.NewGuid().ToString().Replace("-", "") + "." + extension;
-            var storageConnection = ConfigFile.storageSettings.StorageConnection;
-            var storageFolder = ConfigFile.storageSettings.StorageFolder;
-
-            var cloudstorageAccount = CloudStorageAccount.Parse(storageConnection);
-            var cloudblobClient = cloudstorageAccount.CreateCloudBlobClient();
-            var containerObject = cloudblobClient.GetContainerReference(storageFolder.ToLower());
-            containerObject.CreateIfNotExistsAsync().ConfigureAwait(false);
-
-            CloudBlockBlob blockBlob = containerObject.GetBlockBlobReference(fileName);
-            if (data != null && data.Length > 0)
-            {
-                blockBlob.UploadFromByteArrayAsync(data, 0, data.Length);
-                fileName = blockBlob.Uri.AbsoluteUri;
-            }
-            return fileName;
-        }
-
-        public static byte[] GetFiles(string attachementFilePath)
-        {
-            var storageConnection = ConfigFile.storageSettings.StorageConnection;
-            var storageFolder = ConfigFile.storageSettings.StorageFolder;
-
-            BlobContainerClient container = new BlobContainerClient(storageConnection, storageFolder.ToLower());
-            container.CreateIfNotExists(PublicAccessType.Blob);
-
-            //lines modified
-            var fileName = attachementFilePath.Split("/");
-            var blockBlob = container.GetBlobClient(fileName[fileName.Length - 1]);
-            using (var ms = new MemoryStream())
-            {
-                if (blockBlob.Exists())
-                {
-                    blockBlob.DownloadTo(ms);
                 }
                 return ms.ToArray();
             }

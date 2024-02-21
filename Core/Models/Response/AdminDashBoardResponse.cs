@@ -6,7 +6,6 @@ namespace Core.Models.Response;
 public class AdminDashBoardResponse
 {
     public AllMastersCountResponse AllMastersCount { get; set; }
-    public IEnumerable<ActivityLog> ActivityLogDetails { get; set; }
 }
 
 public class AllMastersCountResponse
