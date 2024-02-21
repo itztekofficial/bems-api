@@ -1,7 +1,7 @@
 ﻿using Core.DataModel;
-using NPOI.SS.Formula.Functions;
+//using NPOI.SS.Formula.Functions; Manoj
 
-namespace Admin.Repositories.Contracts
+namespace Repositories.Contracts.Admin
 {
     public interface ILookUpRepository : IRepository<LookUpModel>
     {

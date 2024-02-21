@@ -1,13 +1,13 @@
-﻿using Admin.Repositories.Contracts;
-using Core.Models.Request;
+﻿using Core.Models.Request;
 using Core.Models.Response;
 using Core.Util;
 using Microsoft.Extensions.Logging;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
+using Repositories.Contracts.Admin;
 
-namespace Admin.Repositories
+namespace Repositories.Admin
 {
     /// <summary>
     /// CompanyRepository

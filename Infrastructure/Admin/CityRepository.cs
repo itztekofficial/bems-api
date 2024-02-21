@@ -1,11 +1,15 @@
-﻿using Admin.Repositories.Contracts;
+﻿using Repositories.Contracts.Admin;
 using Core.DataModel;
 using Dapper;
 using Microsoft.Extensions.Logging;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Admin.Repositories
+
+
+
+
+namespace Repositories.Admin;
 {
     /// <summary>
     /// CityRepository

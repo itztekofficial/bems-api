@@ -2,7 +2,7 @@
 using Core.Models.Request;
 using Core.Models.Response;
 
-namespace Login.Repositories.Contracts
+namespace Repositories.Contracts.Login
 {
     public interface ILoginRepository
     {

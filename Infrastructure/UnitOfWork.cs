@@ -1,7 +1,7 @@
 ﻿using Admin.Repositories.Contracts;
 using System.Data;
 
-namespace Infrastructure.Repository;
+namespace Infrastructure.Repositories;    //.Repository
 public class UnitOfWork : IUnitOfWork, IDisposable
 {
     readonly IDbTransaction _dbTransaction;

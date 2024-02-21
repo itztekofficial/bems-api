@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{28
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presenters", "Presenters", "{0448D51A-7805-4D0F-8A0A-A09369B361C3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Company.Api", "Presenters\Company.Api\Company.Api.csproj", "{63A61065-BFB6-425D-A2BD-8587217953F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Main.Api", "Presenters\Company.Api\Main.Api.csproj", "{63A61065-BFB6-425D-A2BD-8587217953F1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{D21EC6CD-3B0C-4CD3-966E-ED66760C90E2}"
 EndProject
@@ -21,9 +21,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Data.Sql", "Core.Data.Sql\Core.Data.Sql.csproj", "{DEA56E12-B85B-4A44-9621-7F25A123715A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Company.Repositories", "Infrastructure\Company.Repositories.csproj", "{4DB297F9-975C-4217-9569-981E36475F00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "Infrastructure\Repositories.csproj", "{4DB297F9-975C-4217-9569-981E36475F00}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Company.Services", "Services\Company.Services.csproj", "{9E39D964-2248-4323-9CF3-4B7A10B10055}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Main.Services", "Services\Main.Services.csproj", "{9E39D964-2248-4323-9CF3-4B7A10B10055}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

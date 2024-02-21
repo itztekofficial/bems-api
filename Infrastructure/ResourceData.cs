@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace Template
+namespace Repositories //Template
 {
     /// <summary>
     /// The resource data.

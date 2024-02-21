@@ -22,6 +22,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\Core\Core.csproj" />
+	  <ProjectReference Include="..\Domain\Domain.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Reference Include="Core">
+	    <HintPath>..\Core\bin\Debug\net6.0\Core.dll</HintPath>
+	  </Reference>
 	</ItemGroup>
 </Project>

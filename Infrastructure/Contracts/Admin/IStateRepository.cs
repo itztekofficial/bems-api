@@ -1,6 +1,6 @@
 ﻿using Core.DataModel;
 
-namespace Admin.Repositories.Contracts;
+namespace Repositories.Contracts.Admin;
 public interface IStateRepository : IRepository<State>
 {
 }

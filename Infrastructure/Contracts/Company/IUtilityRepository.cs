@@ -1,7 +1,7 @@
 ﻿using Core.Models.Request;
 using Core.Models.Response;
 
-namespace Company.Repositories.Contracts
+namespace Repositories.Contracts.Company
 {
     public interface IUtilityRepository
     {

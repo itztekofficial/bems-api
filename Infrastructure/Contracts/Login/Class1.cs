@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Repositories.Admin;
-internal class Class1
+namespace Repositories.Contracts.Login
 {
+    internal class Class1
+    {
+    }
 }

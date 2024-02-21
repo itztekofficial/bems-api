@@ -1,6 +1,6 @@
 ﻿using Core.Models.Response;
 
-namespace Admin.Repositories.Contracts;
+namespace Repositories.Contracts.Admin;
 public interface IAdminDashBoardRepository
 {
     Task<AdminDashBoardResponse> GetAdminDashBoardData();

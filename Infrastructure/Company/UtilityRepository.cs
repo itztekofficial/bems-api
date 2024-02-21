@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Company.Repositories
+namespace Repositories.Company
 {
     public class UtilityRepository : IUtilityRepository
     {

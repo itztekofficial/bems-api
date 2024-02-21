@@ -1,7 +1,7 @@
 ﻿using Core.DataModel;
 using Core.Models.Request;
 
-namespace Login.Repositories.Contracts
+namespace Repositories.Contracts.Login
 {
     public interface IUtilRepository
     {

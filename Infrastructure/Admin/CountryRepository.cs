@@ -1,11 +1,14 @@
-﻿using Admin.Repositories.Contracts;
+﻿
 using Core.DataModel;
 using Dapper;
-using Microsoft.Extensions.Logging;
 using System.Data;
 using System.Data.SqlClient;
+using Repositories.Contracts.Admin;
 
-namespace Admin.Repositories
+
+
+
+namespace Repositories.Admin
 {
     /// <summary>
     /// CountryRepository

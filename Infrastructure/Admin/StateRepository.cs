@@ -5,7 +5,7 @@ using Microsoft.Extensions.Logging;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Admin.Repositories
+namespace Repositories.Admin
 {
     /// <summary>
     /// StateRepository
