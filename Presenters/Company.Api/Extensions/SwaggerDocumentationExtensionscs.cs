@@ -22,8 +22,8 @@ public static class SwaggerDocumentationExtensions
     {
         services.AddSwaggerGen(options =>
         {
-            options.SwaggerDoc(name: "CompanyApi",
-                new OpenApiInfo { Title = "Company API", Version = "v1" });
+            options.SwaggerDoc(name: "MainApi",
+                new OpenApiInfo { Title = "Main API", Version = "v1" });
             options.AddSecurityDefinition(name: "Bearer", securityScheme: new OpenApiSecurityScheme
             {
                 Name = "Authorization",
@@ -52,7 +52,7 @@ public static class SwaggerDocumentationExtensions
             options.CustomSchemaIds(i => i.FullName);
             options.DocInclusionPredicate((docName, Description) => true);
             options.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
-            options.SwaggerDoc("v1", new OpenApiInfo { Title = "Company Api", Version = "v1" });
+            options.SwaggerDoc("v1", new OpenApiInfo { Title = "Main Api", Version = "v1" });
 
             string xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
             string xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
