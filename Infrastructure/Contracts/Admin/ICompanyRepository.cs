@@ -1,4 +1,7 @@
-﻿namespace Repositories.Contracts.Admin
+﻿using Core.Models.Request;
+using Core.Models.Response;
+
+namespace Repositories.Contracts.Admin
 {
     public interface ICompanyRepository
     {

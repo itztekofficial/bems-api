@@ -1,5 +1,7 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
+using Core.Models.Request;
+using Core.Models.Response;
 using Microsoft.Extensions.Logging;
 using Repositories.Contracts.Admin;
 
@@ -121,6 +123,11 @@ namespace Repositories.Admin
 
             throw new NotImplementedException();
         }
+
+        //public Task<int> Save(CompanyRequest Company)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         #endregion
     }

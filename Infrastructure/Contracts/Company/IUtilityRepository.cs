@@ -1,4 +1,7 @@
-﻿namespace Repositories.Contracts.Company
+﻿using Core.Models.Request;
+using Core.Models.Response;
+
+namespace Repositories.Contracts.Company
 {
     public interface IUtilityRepository
     {
