@@ -1,10 +1,8 @@
-﻿using Core.DataModel;
-using Core.Models.Request;
-using Core.Util;
-using Login.Repositories.Contracts;
-using Microsoft.Extensions.Logging;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
+using Core.DataModel;
+using Microsoft.Extensions.Logging;
+using Repositories.Contracts.Login;
 
 namespace Login.Repositories
 {

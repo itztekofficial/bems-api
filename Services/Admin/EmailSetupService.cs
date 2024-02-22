@@ -1,9 +1,7 @@
-﻿using Admin.Repositories.Contracts;
-using Admin.Services.Contracts;
-using Core.DataModel;
+﻿using Core.DataModel;
 using Core.Models.Request;
 
-namespace Admin.Services
+namespace Main.Services.Admin
 {
     /// <summary>
     /// EmailSetupService

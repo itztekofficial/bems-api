@@ -1,11 +1,8 @@
-﻿using Core.Models.Request;
-using Core.Models.Response;
-using Core.Util;
-using Microsoft.Extensions.Logging;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Text;
+using Microsoft.Extensions.Logging;
 using Repositories.Contracts.Admin;
+
 
 namespace Repositories.Admin
 {
@@ -44,7 +41,7 @@ namespace Repositories.Admin
             }
             catch (Exception ex)
             {
-                Log.WriteLog("CompanyRepository", "GetCompanyDetail", ex.Message);
+                //   _logger.WriteLog("CompanyRepository", "GetCompanyDetail", ex.Message);
                 throw;
             }
         }
@@ -62,7 +59,7 @@ namespace Repositories.Admin
             }
             catch (Exception ex)
             {
-                Log.WriteLog("CompanyRepository", "Save", ex.Message);
+                // _logger.WriteLog("CompanyRepository", "Save", ex.Message);
                 return 3;
             }
         }
@@ -82,9 +79,9 @@ namespace Repositories.Admin
             {
                 try
                 {
-                   // StringBuilder sb = new();
+                    // StringBuilder sb = new();
 
-                  //  sb.Append("Test mail");
+                    //  sb.Append("Test mail");
 
                     //string emailResponse = new MailSMS().Send(emailId, "Welcome !", sb.ToString());
                 }
@@ -108,7 +105,7 @@ namespace Repositories.Admin
             }
             catch (Exception ex)
             {
-                Log.WriteLog("CompanyRepository", "Save", ex.Message);
+                //_logger.WriteLog("CompanyRepository", "Save", ex.Message);
                 return 2;
             }
         }

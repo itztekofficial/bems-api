@@ -1,7 +1,7 @@
 ﻿using Core.Models.Request;
 using Core.Models.Response;
 
-namespace Company.Services.Contracts
+namespace Main.Services.Contracts.Company
 {
     public interface ICompanyDashBoardService
     {

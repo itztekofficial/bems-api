@@ -1,12 +1,10 @@
 ﻿
-using Core.DataModel;
-using Dapper;
 using System.Data;
 using System.Data.SqlClient;
+using Core.DataModel;
+using Dapper;
+using Microsoft.Extensions.Logging;
 using Repositories.Contracts.Admin;
-
-
-
 
 namespace Repositories.Admin
 {
@@ -62,7 +60,7 @@ namespace Repositories.Admin
             param.Add("Sequence", cont.Sequence);
             param.Add("IsActive", cont.IsActive);
             param.Add("CreatedById", cont.CreatedById);
-            param.Add("CreateDate", DateTime.UtcNow);            
+            param.Add("CreateDate", DateTime.UtcNow);
 
             var res = await _sqlConnection.ExecuteAsync("usp_Country", param, transaction: _dbTransaction, null, commandType: CommandType.StoredProcedure);
             _dbTransaction.Commit();

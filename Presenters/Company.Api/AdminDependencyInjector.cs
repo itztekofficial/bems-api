@@ -1,11 +1,7 @@
 ﻿
 using Admin.Services;
-using Admin.Services.Contracts;
 using System.Data.SqlClient;
 using System.Data;
-using Admin.Repositories.Contracts;
-using Infrastructure.Repository;
-using Admin.Repositories;
 
 namespace Admin.Api
 {

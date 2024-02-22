@@ -1,5 +1,4 @@
-﻿using Company.Services.Contracts;
-using Core.Models.Request;
+﻿using Core.Models.Request;
 using Core.Models.Response;
 using Core.Util;
 using Core.ViewModel;

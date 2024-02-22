@@ -11,7 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Infrastructure\Company\Company.Repositories.csproj" />
+    <!--<ProjectReference Include="..\..\Infrastructure\Company\Company.Repositories.csproj" />-->
+    <ProjectReference Include="..\Core\Core.csproj" />
+    <ProjectReference Include="..\Infrastructure\Repositories.csproj" />
   </ItemGroup>
 
 </Project>

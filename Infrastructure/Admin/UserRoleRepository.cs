@@ -1,13 +1,12 @@
-﻿using Admin.Repositories.Contracts;
+﻿using System.Data;
+using System.Data.SqlClient;
 using Core.DataModel;
-using Core.Models;
-using Core.Models.Request;
-using Core.Models.Response;
-using Core.Util;
 using Dapper;
 using Microsoft.Extensions.Logging;
-using System.Data;
-using System.Data.SqlClient;
+using Repositories.Contracts.Admin;
+
+
+
 
 namespace Repositories.Admin
 {
@@ -407,7 +406,7 @@ namespace Repositories.Admin
                 param.Add("RoleIds", obj.RoleIds);
                 param.Add("EntityIds", obj.EntityIds);
                 param.Add("DepartmentIds", obj.DepartmentIds);
-                param.Add("RoleTypeId", obj.RoleTypeId);                
+                param.Add("RoleTypeId", obj.RoleTypeId);
                 param.Add("MenuIds", obj.MenuIds);
                 param.Add("IsActive", obj.IsActive);
                 param.Add("CreatedById", obj.CreatedById);

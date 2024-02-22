@@ -1,6 +1,4 @@
-﻿using Admin.Repositories.Contracts;
-using Admin.Services.Contracts;
-using Core.Models.Response;
+﻿using Core.Models.Response;
 
 namespace Admin.Services
 {

@@ -1,7 +1,7 @@
 ﻿using Core.DataModel;
 using Core.Models.Request;
 
-namespace Admin.Services.Contracts
+namespace Main.Services.Contracts.Admin
 {
     public interface IDocumentService
     {

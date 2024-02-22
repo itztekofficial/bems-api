@@ -1,12 +1,5 @@
-﻿using Company.Repositories;
-using Company.Repositories.Contracts;
-using Company.Services;
-using Company.Services.Contracts;
-using Core.Util;
-using Login.Repositories.Contracts;
+﻿using Core.Util;
 using Login.Repositories;
-using Login.Services.Contracts;
-using Login.Services;
 using Microsoft.Extensions.DependencyInjection;
 using System.Data;
 using System.Data.SqlClient;

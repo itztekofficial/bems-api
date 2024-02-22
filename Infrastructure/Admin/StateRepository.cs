@@ -1,9 +1,9 @@
-﻿using Admin.Repositories.Contracts;
+﻿using System.Data;
+using System.Data.SqlClient;
 using Core.DataModel;
 using Dapper;
 using Microsoft.Extensions.Logging;
-using System.Data;
-using System.Data.SqlClient;
+using Repositories.Contracts.Admin;
 
 namespace Repositories.Admin
 {
@@ -60,7 +60,7 @@ namespace Repositories.Admin
             param.Add("Sequence", state.Sequence);
             param.Add("IsActive", state.IsActive);
             param.Add("CreatedById", state.CreatedById);
-            param.Add("CreateDate", DateTime.UtcNow);            
+            param.Add("CreateDate", DateTime.UtcNow);
 
             var res = await _sqlConnection.ExecuteAsync("usp_State", param, transaction: _dbTransaction, null, commandType: CommandType.StoredProcedure);
             _dbTransaction.Commit();
@@ -72,7 +72,7 @@ namespace Repositories.Admin
             var param = new DynamicParameters();
             param.Add("ActionType", "update");
             param.Add("Id", state.Id);
-            param.Add("CountryId", state.CountryId);        
+            param.Add("CountryId", state.CountryId);
             param.Add("Code", state.Code);
             param.Add("Name", state.Name);
             param.Add("Sequence", state.Sequence);

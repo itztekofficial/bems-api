@@ -1,13 +1,11 @@
-﻿using Admin.Repositories.Contracts;
-using Admin.Services.Contracts;
-using Core.DataModel;
+﻿using Core.DataModel;
 using Core.Models;
 using Core.Models.Request;
 using Core.Models.Response;
 using Core.Util;
 using Microsoft.Extensions.Logging;
 
-namespace Admin.Services
+namespace Main.Services.Admin
 {
     public class UserRoleService : IUserRoleService
     {
@@ -27,7 +25,7 @@ namespace Admin.Services
         {
             try
             {
-               var userResponses = await _userRoleRepository.UserList(formParmData);
+                var userResponses = await _userRoleRepository.UserList(formParmData);
                 _ = userResponses.All(x =>
                 {
                     x.UserPwd = EncryptDecrypt.Decrypt(x.UserPwd);

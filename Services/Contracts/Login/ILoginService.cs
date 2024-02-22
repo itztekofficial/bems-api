@@ -1,7 +1,7 @@
 ﻿using Core.Models.Request;
 using Core.Models.Response;
 
-namespace Login.Services.Contracts
+namespace Main.Services.Contracts.Login
 {
     public interface ILoginService
     {

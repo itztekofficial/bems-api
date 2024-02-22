@@ -1,7 +1,5 @@
 ﻿using ClosedXML.Excel;
-using Company.Services.Contracts;
 using Core.Models.Request;
-using Core.Models.Response;
 using Core.Util;
 using Core.ViewModel;
 using Microsoft.AspNetCore.Mvc;

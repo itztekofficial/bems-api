@@ -1,6 +1,6 @@
 ﻿using Core.Models.Response;
 
-namespace Admin.Services.Contracts
+namespace Main.Services.Contracts.Admin
 {
     public interface IAdminDashBoardService
     {

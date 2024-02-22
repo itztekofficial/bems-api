@@ -1,12 +1,9 @@
-﻿using Admin.Repositories.Contracts;
-using Admin.Services.Contracts;
-using Core.DataModel;
+﻿using Core.DataModel;
 using Core.Models.Request;
 using Core.Models.Response;
-using Core.Util;
 using Omu.ValueInjecter;
 
-namespace Admin.Services
+namespace Main.Services.Admin
 {
     /// <summary>
     /// LookUpService

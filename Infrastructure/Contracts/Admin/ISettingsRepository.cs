@@ -1,7 +1,4 @@
-﻿using Core.Models.Request;
-using Core.Models.Response;
-
-namespace Repositories.Contracts.Admin
+﻿namespace Repositories.Contracts.Admin
 {
     public interface ISettingsRepository
     {

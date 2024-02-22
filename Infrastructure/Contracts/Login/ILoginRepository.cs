@@ -1,6 +1,4 @@
 ﻿using Core.DataModel;
-using Core.Models.Request;
-using Core.Models.Response;
 
 namespace Repositories.Contracts.Login
 {
@@ -14,7 +12,7 @@ namespace Repositories.Contracts.Login
 
         Task<User> GetUserDetailById(int id);
 
-        Task<ForgotPasswordResponse> GetUserDetailsByEmail(string emailId);
+        //Task<ForgotPasswordResponse> GetUserDetailsByEmail(string emailId);
 
         Task<bool> LogoutUser(int id);
     }

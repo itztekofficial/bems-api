@@ -37,7 +37,8 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Core\Core.csproj" />
     <ProjectReference Include="..\..\Middlewares\Middlewares.csproj" />
-    <ProjectReference Include="..\..\Services\Company\Company.Services.csproj" />
+    <!--<ProjectReference Include="..\..\Services\Company\Company.Services.csproj" />-->
+    <ProjectReference Include="..\..\Services\Main.Services.csproj" />
   </ItemGroup>
 
 

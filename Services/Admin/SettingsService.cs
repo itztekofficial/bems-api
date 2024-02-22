@@ -1,11 +1,8 @@
-﻿using Admin.Repositories.Contracts;
-using Admin.Services.Contracts;
-using Core.Models.Request;
+﻿using Core.Models.Request;
 using Core.Models.Response;
-using Core.Util;
 using Microsoft.Extensions.Logging;
 
-namespace Admin.Services
+namespace Main.Services.Admin
 {
     public class SettingsService : ISettingsService
     {

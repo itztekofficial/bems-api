@@ -1,10 +1,7 @@
-﻿using Admin.Repositories.Contracts;
-using Admin.Services.Contracts;
-using Core.Models.Request;
+﻿using Core.Models.Request;
 using Core.Models.Response;
-using Core.Util;
 
-namespace Admin.Services
+namespace Main.Services.Admin
 {
     /// <summary>
     /// CompanyService

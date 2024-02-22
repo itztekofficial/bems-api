@@ -1,13 +1,10 @@
-﻿using Core.DataModel;
-using Core.Models.Request;
-using Core.Models.Response;
-using Core.Util;
+﻿using System.Data;
+using System.Data.SqlClient;
+using Core.DataModel;
 using Dapper;
 using Domain;
-using Login.Repositories.Contracts;
 using Microsoft.Extensions.Logging;
-using System.Data;
-using System.Data.SqlClient;
+using Repositories.Contracts.Login;
 
 namespace Login.Repositories
 {
@@ -69,7 +66,7 @@ namespace Login.Repositories
             }
             catch (Exception ex)
             {
-                Log.WriteLog("LoginRepository", "GetUserDetails", ex.Message);
+                // Log.WriteLog("LoginRepository", "GetUserDetails", ex.Message);
             }
             return user;
         }
@@ -96,7 +93,7 @@ namespace Login.Repositories
             }
             catch (Exception ex)
             {
-                Log.WriteLog("LoginRepository", "ValidateUserDetailById", ex.Message);
+                //  Log.WriteLog("LoginRepository", "ValidateUserDetailById", ex.Message);
                 throw;
             }
             return validateUserMultiRoleResponse;
@@ -158,7 +155,7 @@ namespace Login.Repositories
             }
             catch (Exception ex)
             {
-                Log.WriteLog("LoginRepository", "GetUserDetails", ex.Message);
+                //  Log.WriteLog("LoginRepository", "GetUserDetails", ex.Message);
                 throw;
             }
             return loginDetailResponse;
@@ -181,7 +178,7 @@ namespace Login.Repositories
             }
             catch (Exception ex)
             {
-                Log.WriteLog("LoginRepository", "GetUserDetails", ex.Message);
+                //  Log.WriteLog("LoginRepository", "GetUserDetails", ex.Message);
             }
             return user;
         }
@@ -191,45 +188,45 @@ namespace Login.Repositories
         /// </summary>
         /// <param name="emailId"></param>
         /// <returns>string</returns>
-        public async Task<ForgotPasswordResponse> GetUserDetailsByEmail(string emailId)
-        {
-            ForgotPasswordResponse response = new();
-            try
-            {
-                var param = new DynamicParameters();
-                param.Add("ActionType", "GetUserDetailsByEmailId");
-                param.Add("EmailId", emailId);
-                var userObj = await _sqlConnection.QueryFirstOrDefaultAsync<ForgotPassword>("usp_Login", param, transaction: _dbTransaction, null, commandType: CommandType.StoredProcedure);
+        //public async Task<ForgotPasswordResponse> GetUserDetailsByEmail(string emailId)
+        //{
+        //    ForgotPasswordResponse response = new();
+        //    try
+        //    {
+        //        var param = new DynamicParameters();
+        //        param.Add("ActionType", "GetUserDetailsByEmailId");
+        //        param.Add("EmailId", emailId);
+        //        var userObj = await _sqlConnection.QueryFirstOrDefaultAsync<ForgotPassword>("usp_Login", param, transaction: _dbTransaction, null, commandType: CommandType.StoredProcedure);
 
-                if (userObj != null)
-                {
-                    Random generator = new();
-                    response.Name = userObj.Name;
-                    response.UserPwd = EncryptDecrypt.Decrypt(userObj.UserPwd);
-                    response.RandomCode = generator.Next(0, 1000000).ToString("D6");
-                    try
-                    {
-                        MailSMS mail = new();
-                        EmailHtmlBodyData emaildata = new()
-                        {
-                            Header = "",
-                            WelcomeMessage = "Dear " + userObj.Name + " ,",
-                            MailBodyMessage = "We received your forgot your password request, Please enter security code <b>" + response.RandomCode + "</b> and proceed further to receive password. <br /><br /><br /> Note: Please do not share your security code and password to any one.",
-                            IdMessage = "",
-                            IdNumber = ""
-                        };
-                        string htmldata = mail.CrateEmailHTMLTemplate(emaildata);
-                        mail.SendEMail(emailId, "Forgot password request", htmldata.ToString(), string.Empty, null);
-                    }
-                    catch { }
-                }
-            }
-            catch (Exception ex)
-            {
-                Log.WriteLog("LoginRepository", "GetUserDetails", ex.Message);
-            }
-            return response;
-        }
+        //        if (userObj != null)
+        //        {
+        //            Random generator = new();
+        //            response.Name = userObj.Name;
+        //            response.UserPwd = EncryptDecrypt.Decrypt(userObj.UserPwd);
+        //            response.RandomCode = generator.Next(0, 1000000).ToString("D6");
+        //            try
+        //            {
+        //                MailSMS mail = new();
+        //                EmailHtmlBodyData emaildata = new()
+        //                {
+        //                    Header = "",
+        //                    WelcomeMessage = "Dear " + userObj.Name + " ,",
+        //                    MailBodyMessage = "We received your forgot your password request, Please enter security code <b>" + response.RandomCode + "</b> and proceed further to receive password. <br /><br /><br /> Note: Please do not share your security code and password to any one.",
+        //                    IdMessage = "",
+        //                    IdNumber = ""
+        //                };
+        //                string htmldata = mail.CrateEmailHTMLTemplate(emaildata);
+        //                mail.SendEMail(emailId, "Forgot password request", htmldata.ToString(), string.Empty, null);
+        //            }
+        //            catch { }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Log.WriteLog("LoginRepository", "GetUserDetails", ex.Message);
+        //    }
+        //    return response;
+        //}
 
         /// <summary>
         /// LogoutUser
@@ -253,7 +250,7 @@ namespace Login.Repositories
             }
             catch (Exception ex)
             {
-                Log.WriteLog("LoginRepository", "GetUserDetails", ex.Message);
+                //  Log.WriteLog("LoginRepository", "GetUserDetails", ex.Message);
                 throw;
             }
         }

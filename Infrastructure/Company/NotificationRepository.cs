@@ -1,11 +1,9 @@
-﻿using Company.Repositories.Contracts;
-using Core.AppConst;
-using Core.Models.Request;
-using Core.Models.Response;
-using Dapper;
-using Microsoft.Extensions.Logging;
+﻿
 using System.Data;
 using System.Data.SqlClient;
+using Dapper;
+using Microsoft.Extensions.Logging;
+using Repositories.Contracts.Company;
 
 namespace Repositories.Company
 {

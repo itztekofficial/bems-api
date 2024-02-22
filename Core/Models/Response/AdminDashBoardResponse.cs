@@ -1,7 +1,4 @@
-﻿using Core.DataModel;
-using System.Collections.Generic;
-
-namespace Core.Models.Response;
+﻿namespace Core.Models.Response;
 
 public class AdminDashBoardResponse
 {

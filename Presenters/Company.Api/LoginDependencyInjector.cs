@@ -1,7 +1,4 @@
 ﻿using Login.Repositories;
-using Login.Repositories.Contracts;
-using Login.Services;
-using Login.Services.Contracts;
 using Microsoft.Extensions.DependencyInjection;
 using System.Data;
 using System.Data.SqlClient;

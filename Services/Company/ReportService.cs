@@ -1,9 +1,7 @@
-﻿using Company.Repositories.Contracts;
-using Company.Services.Contracts;
-using Core.Models.Request;
+﻿using Core.Models.Request;
 using Core.Models.Response;
 
-namespace Company.Services
+namespace Main.Services.Company
 {
     /// <summary>
     /// Report Service

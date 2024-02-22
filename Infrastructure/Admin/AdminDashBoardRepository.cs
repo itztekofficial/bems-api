@@ -1,10 +1,8 @@
-﻿using Admin.Repositories.Contracts;
-using Core.DataModel;
-using Core.Models.Response;
+﻿using System.Data;
+using System.Data.SqlClient;
 using Dapper;
 using Microsoft.Extensions.Logging;
-using System.Data;
-using System.Data.SqlClient;
+using Repositories.Contracts.Admin;
 
 namespace Repositories.Admin
 {
@@ -40,7 +38,7 @@ namespace Repositories.Admin
 
             var res = await _sqlConnection.QueryMultipleAsync("usp_AdminDashBoard", param, transaction: _dbTransaction, null, commandType: CommandType.StoredProcedure);
             dashBoardResponse.AllMastersCount = res.ReadFirstOrDefault<AllMastersCountResponse>();
-            dashBoardResponse.ActivityLogDetails = res.Read<ActivityLog>();
+            // dashBoardResponse.ActivityLogDetails = res.Read<ActivityLog>(); Manoj
 
             return dashBoardResponse;
         }

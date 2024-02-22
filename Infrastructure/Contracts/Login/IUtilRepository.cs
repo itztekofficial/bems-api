@@ -1,5 +1,4 @@
 ﻿using Core.DataModel;
-using Core.Models.Request;
 
 namespace Repositories.Contracts.Login
 {

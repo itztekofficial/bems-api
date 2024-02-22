@@ -1,9 +1,9 @@
-﻿using Admin.Repositories.Contracts;
+﻿using System.Data;
+using System.Data.SqlClient;
 using Core.DataModel;
 using Dapper;
 using Microsoft.Extensions.Logging;
-using System.Data;
-using System.Data.SqlClient;
+using Repositories.Contracts.Admin;
 
 namespace Repositories.Admin
 {
@@ -60,7 +60,7 @@ namespace Repositories.Admin
             param.Add("SMTPPort", emailSetup.SMTPPort);
             param.Add("IsActive", emailSetup.IsActive);
             param.Add("CreatedById", emailSetup.CreatedById);
-            param.Add("CreateDate", DateTime.UtcNow);            
+            param.Add("CreateDate", DateTime.UtcNow);
 
             var res = await _sqlConnection.ExecuteAsync("usp_EmailSetup", param, transaction: _dbTransaction, null, commandType: CommandType.StoredProcedure);
             _dbTransaction.Commit();

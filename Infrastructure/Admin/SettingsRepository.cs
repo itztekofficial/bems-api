@@ -1,11 +1,8 @@
-﻿using Admin.Repositories.Contracts;
-using Core.Models.Request;
-using Core.Models.Response;
-using Core.Util;
+﻿using System.Data;
+using System.Data.SqlClient;
 using Dapper;
 using Microsoft.Extensions.Logging;
-using System.Data;
-using System.Data.SqlClient;
+using Repositories.Contracts.Admin;
 
 namespace Repositories.Admin
 {

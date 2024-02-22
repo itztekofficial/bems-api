@@ -1,10 +1,7 @@
-﻿using Company.Repositories.Contracts;
-using Company.Services.Contracts;
-using Core.Models.Request;
+﻿using Core.Models.Request;
 using Core.Models.Response;
-using Core.Util;
 
-namespace Company.Services
+namespace Main.Services.Company
 {
     /// <summary>
     /// UtilityService

@@ -1,11 +1,8 @@
-﻿using Admin.Services.Contracts;
-using ClosedXML.Excel;
-using Core.DataModel;
+﻿using Core.DataModel;
 using Core.Models.Request;
 using Core.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Middlewares;
-using System.Data;
 
 namespace Admin.Api.Controllers
 {

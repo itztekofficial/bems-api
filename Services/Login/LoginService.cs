@@ -1,17 +1,14 @@
-﻿using Core.Models;
+﻿using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using Core.Models;
 using Core.Models.Request;
 using Core.Models.Response;
-using Core.Util;
-using Login.Repositories.Contracts;
-using Login.Services.Contracts;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Omu.ValueInjecter;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
 
-namespace Login.Services
+namespace Main.Services.Login
 {
     public class LoginService : ILoginService
     {

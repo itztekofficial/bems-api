@@ -1,10 +1,9 @@
-﻿using Admin.Data.Sql.Queries;
-using Admin.Repositories.Contracts;
+﻿using System.Data;
+using System.Data.SqlClient;
 using Core.DataModel;
 using Dapper;
 using Microsoft.Extensions.Logging;
-using System.Data;
-using System.Data.SqlClient;
+using Repositories.Contracts.Admin;
 
 namespace Repositories.Admin
 {
@@ -64,7 +63,7 @@ namespace Repositories.Admin
             return await _sqlConnection.QuerySingleOrDefaultAsync<LookUpModel>("usp_Lookups", param, transaction: _dbTransaction, null, commandType: CommandType.StoredProcedure);
         }
 
-       
+
         public async Task<bool> CreateAsync(LookUpModel entity)
         {
             var result = await _sqlConnection.ExecuteAsync(LookUpQueries.AddLookUp, entity, transaction: _dbTransaction);

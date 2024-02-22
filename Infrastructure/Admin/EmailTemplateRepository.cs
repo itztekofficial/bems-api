@@ -1,9 +1,9 @@
-﻿using Admin.Repositories.Contracts;
+﻿using System.Data;
+using System.Data.SqlClient;
+using ARepositories.Contracts.Admin;
 using Core.DataModel;
 using Dapper;
 using Microsoft.Extensions.Logging;
-using System.Data;
-using System.Data.SqlClient;
 
 namespace Repositories.Admin
 {
@@ -58,7 +58,7 @@ namespace Repositories.Admin
             param.Add("Template", emailTemplate.Template);
             param.Add("IsActive", emailTemplate.IsActive);
             param.Add("CreatedById", emailTemplate.CreatedById);
-            param.Add("CreateDate", DateTime.UtcNow);            
+            param.Add("CreateDate", DateTime.UtcNow);
 
             var res = await _sqlConnection.ExecuteAsync("usp_EmailTemplate", param, transaction: _dbTransaction, null, commandType: CommandType.StoredProcedure);
             _dbTransaction.Commit();
