@@ -1,6 +1,15 @@
 ﻿using Core.Util;
+using Infrastructure.Repositories;
 using Login.Repositories;
+using Main.Services.Company;
+using Main.Services.Contracts.Company;
+using Main.Services.Contracts.Login;
+using Main.Services.Login;
 using Microsoft.Extensions.DependencyInjection;
+using Repositories.Company;
+using Repositories.Contracts;
+using Repositories.Contracts.Company;
+using Repositories.Contracts.Login;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -33,14 +42,14 @@ namespace Company.Api
             services.AddTransient<IUtilityRepository, UtilityRepository>();
             services.AddTransient<IUtilityService, UtilityService>();
 
-            services.AddTransient<IInitiationDetailRepository, InitiationDetailRepository>();
-            services.AddTransient<IInitiationDetailService, InitiationDetailService>();
+            //services.AddTransient<IInitiationDetailRepository, InitiationDetailRepository>(); Manoj
+            //services.AddTransient<IInitiationDetailService, InitiationDetailService>();
 
             services.AddTransient<ICompanyDashBoardRepository, CompanyDashBoardRepository>();
             services.AddTransient<ICompanyDashBoardService, CompanyDashBoardService>();
 
-            services.AddTransient<IRequestApprovalRepository, RequestApprovalRepository>();
-            services.AddTransient<IRequestApprovalService, RequestApprovalService>();
+            //services.AddTransient<IRequestApprovalRepository, RequestApprovalRepository>();
+            //services.AddTransient<IRequestApprovalService, RequestApprovalService>();
 
             services.AddTransient<IReportRepository, ReportRepository>();
             services.AddTransient<IReportService, ReportService>();
@@ -51,8 +60,8 @@ namespace Company.Api
             services.AddTransient<ILoginRepository, LoginRepository>();
             services.AddTransient<ILoginService, LoginService>();
 
-            services.AddTransient<IUtilRepository, UtilRepository>();
-            services.AddTransient<IUtilService, UtilService>();
+            //services.AddTransient<IUtilRepository, UtilRepository>();
+            //services.AddTransient<IUtilService, UtilService>();
 
             return services;
         }

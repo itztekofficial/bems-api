@@ -1,7 +1,7 @@
-﻿using Company.Services.Contracts;
-using Core.Models.Request;
+﻿using Core.Models.Request;
 using Core.Models.Response;
 using Core.ViewModel;
+using Main.Services.Contracts.Company;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Middlewares;

@@ -1,5 +1,8 @@
 ﻿using Login.Repositories;
+using Main.Services.Contracts.Login;
+using Main.Services.Login;
 using Microsoft.Extensions.DependencyInjection;
+using Repositories.Contracts.Login;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -31,8 +34,8 @@ namespace Login.Api
             services.AddTransient<ILoginRepository, LoginRepository>();
             services.AddTransient<ILoginService, LoginService>();
 
-            services.AddTransient<IUtilRepository, UtilRepository>();
-            services.AddTransient<IUtilService, UtilService>();
+            //services.AddTransient<IUtilRepository, UtilRepository>(); Manoj
+            //services.AddTransient<IUtilService, UtilService>();
             return services;
         }
     }

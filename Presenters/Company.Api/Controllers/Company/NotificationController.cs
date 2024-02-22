@@ -1,6 +1,7 @@
 ﻿using Core.Models.Request;
 using Core.Models.Response;
 using Core.ViewModel;
+using Main.Services.Contracts.Company;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Middlewares;
@@ -34,23 +35,23 @@ namespace Company.Api.Controllers
         /// Get All Notification
         /// </summary>
         /// <returns></returns>
-        [HttpPost, Route("GetAllNotification")]     
-        public async Task<ApiResponse<IEnumerable<NotificationResponse>>> GetAllNotification(NotificationRequest notificationRequest)
-        {
-            try
-            {
-                var result = await _notificationService.GetNotificationListAsync(notificationRequest);
-                return new ApiResponse<IEnumerable<NotificationResponse>> ()
-                {
-                    Status = EnumStatus.Success,
-                    Data = result,
-                };
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex.Message);
-                return new ApiResponse<IEnumerable<NotificationResponse>>() { Status = EnumStatus.Error, Message = ex.Message };
-            }
-        }        
+        //[HttpPost, Route("GetAllNotification")]     
+        //public async Task<ApiResponse<IEnumerable<NotificationResponse>>> GetAllNotification(NotificationRequest notificationRequest)
+        //{
+        //    try
+        //    {
+        //        var result = await _notificationService.GetNotificationListAsync(notificationRequest);
+        //        return new ApiResponse<IEnumerable<NotificationResponse>> ()
+        //        {
+        //            Status = EnumStatus.Success,
+        //            Data = result,
+        //        };
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logger.LogError(ex.Message);
+        //        return new ApiResponse<IEnumerable<NotificationResponse>>() { Status = EnumStatus.Error, Message = ex.Message };
+        //    }
+        //}        
     }
 }

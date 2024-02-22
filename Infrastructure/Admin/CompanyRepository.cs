@@ -35,18 +35,18 @@ namespace Repositories.Admin
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public async Task<CompanyResponse> GetCompanyDetail(string Id)
-        {
-            try
-            {
-                throw new NotImplementedException();
-            }
-            catch (Exception ex)
-            {
-                //   _logger.WriteLog("CompanyRepository", "GetCompanyDetail", ex.Message);
-                throw;
-            }
-        }
+        //public async Task<CompanyResponse> GetCompanyDetail(string Id)
+        //{
+        //    try
+        //    {
+        //        throw new NotImplementedException();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //          _logger.WriteLog("CompanyRepository", "GetCompanyDetail", ex.Message);
+        //        throw;
+        //    }
+        //}
 
         /// <summary>
         /// Save
@@ -121,6 +121,11 @@ namespace Repositories.Admin
         {
             //var result = await _sqlConnection.QueryAsync<LookUpModel>("usp_Lookups", new { action = "getAll" }, transaction: _dbTransaction, null, commandType: CommandType.StoredProcedure);
 
+            throw new NotImplementedException();
+        }
+
+        public Task<CompanyResponse> GetCompanyDetail(string Id)
+        {
             throw new NotImplementedException();
         }
 

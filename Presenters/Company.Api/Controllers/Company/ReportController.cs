@@ -2,6 +2,7 @@
 using Core.Models.Request;
 using Core.Util;
 using Core.ViewModel;
+using Main.Services.Contracts.Company;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Middlewares;
@@ -38,24 +39,24 @@ namespace Company.Api.Controllers
         /// Get All Contracts
         /// </summary>
         /// <returns></returns>
-        [HttpPost, Route("GetAllContracts")]
-        public async Task<ApiResponse<IEnumerable<ApprovalResponse>>> GetAllContractsAsync(ReportRequest reportRequest)
-        {
-            try
-            {
-                var result = await _reportService.GetAllContractsAsync(reportRequest);
-                return new ApiResponse<IEnumerable<ApprovalResponse>>()
-                {
-                    Status = EnumStatus.Success,
-                    Data = result,
-                };
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex.Message);
-                return new ApiResponse<IEnumerable<ApprovalResponse>>() { Status = EnumStatus.Error, Message = ex.Message };
-            }
-        }
+        //[HttpPost, Route("GetAllContracts")] Manoj
+        //public async Task<ApiResponse<IEnumerable<ApprovalResponse>>> GetAllContractsAsync(ReportRequest reportRequest)
+        //{
+        //    try
+        //    {
+        //        var result = await _reportService.GetAllContractsAsync(reportRequest);
+        //        return new ApiResponse<IEnumerable<ApprovalResponse>>()
+        //        {
+        //            Status = EnumStatus.Success,
+        //            Data = result,
+        //        };
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logger.LogError(ex.Message);
+        //        return new ApiResponse<IEnumerable<ApprovalResponse>>() { Status = EnumStatus.Error, Message = ex.Message };
+        //    }
+        //}
 
         /// <summary>
         /// ExportAllContracts  
