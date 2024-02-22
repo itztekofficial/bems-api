@@ -1,5 +1,7 @@
 ﻿using Core.Models.Request;
 using Core.Models.Response;
+using Main.Services.Contracts.Company;
+using Repositories.Contracts;
 
 namespace Main.Services.Company
 {
@@ -19,14 +21,19 @@ namespace Main.Services.Company
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<IEnumerable<ApprovalResponse>> GetAllContractsAsync(ReportRequest reportRequest)
+        public Task<IEnumerable<ContractReportResponse>> GetExportAllContractsAsync(ReportRequest reportRequest)
         {
-            return await _unitOfWork.Reports.GetAllContractsAsync(reportRequest);
+            throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<ContractReportResponse>> GetExportAllContractsAsync(ReportRequest reportRequest)
-        {
-            return await _unitOfWork.Reports.GetExportAllContractsAsync(reportRequest);
-        }
+        //public async Task<IEnumerable<ApprovalResponse>> GetAllContractsAsync(ReportRequest reportRequest)
+        //{
+        //    return await _unitOfWork.Reports.GetAllContractsAsync(reportRequest);
+        //}
+
+        //public async Task<IEnumerable<ContractReportResponse>> GetExportAllContractsAsync(ReportRequest reportRequest)
+        //{
+        //    return await _unitOfWork.Reports.GetExportAllContractsAsync(reportRequest);
+        //}
     }
 }

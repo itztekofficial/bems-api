@@ -1,5 +1,7 @@
 ﻿using Core.DataModel;
 using Core.Models.Request;
+using Main.Services.Contracts.Admin;
+using Repositories.Contracts;
 
 namespace Main.Services.Admin
 {

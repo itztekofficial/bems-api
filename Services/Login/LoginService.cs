@@ -4,9 +4,12 @@ using System.Text;
 using Core.Models;
 using Core.Models.Request;
 using Core.Models.Response;
+using Core.Util;
+using Main.Services.Contracts.Login;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Omu.ValueInjecter;
+using Repositories.Contracts.Login;
 
 namespace Main.Services.Login
 {
@@ -126,19 +129,19 @@ namespace Main.Services.Login
         /// </summary>
         /// <param name="emailId"></param>
         /// <returns></returns>
-        public async Task<ForgotPasswordResponse> GetUserDetailsByEmail(string emailId)
-        {
-            ForgotPasswordResponse response = new();
-            try
-            {
-                response = await _loginRepository.GetUserDetailsByEmail(emailId);
-            }
-            catch (Exception ex)
-            {
-                Log.WriteLog("LoginRepository", "GetUserDetailsByEmail", ex.Message);
-            }
-            return response;
-        }
+        //public async Task<ForgotPasswordResponse> GetUserDetailsByEmail(string emailId)
+        //{
+        //    ForgotPasswordResponse response = new();
+        //    try
+        //    {
+        //        response = await _loginRepository.GetUserDetailsByEmail(emailId);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Log.WriteLog("LoginRepository", "GetUserDetailsByEmail", ex.Message);
+        //    }
+        //    return response;
+        //}
 
         /// <summary>
         /// LogoutUser
@@ -190,6 +193,11 @@ namespace Main.Services.Login
             var token = tokenHandler.CreateToken(tokenDescriptor);
             var jwtToken = tokenHandler.WriteToken(token);
             return jwtToken;
+        }
+
+        public Task<ForgotPasswordResponse> GetUserDetailsByEmail(string emailId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

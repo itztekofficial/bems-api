@@ -1,5 +1,7 @@
 ﻿using Core.Models.Request;
 using Core.Models.Response;
+using Main.Services.Contracts.Company;
+using Repositories.Contracts;
 
 namespace Main.Services.Company
 {
@@ -24,9 +26,9 @@ namespace Main.Services.Company
         /// </summary>
         /// <param name="notificationRequest"></param>
         /// <returns></returns>
-        public async Task<IEnumerable<NotificationResponse>> GetNotificationListAsync(NotificationRequest notificationRequest)
-        {
-            return await _unitOfWork.Notifications.GetNotificationListAsync(notificationRequest);
-        }
+        //public async Task<IEnumerable<NotificationResponse>> GetNotificationListAsync(NotificationRequest notificationRequest)
+        //{
+        //    return await _unitOfWork.Notifications.GetNotificationListAsync(notificationRequest);
+        //}
     }
 }

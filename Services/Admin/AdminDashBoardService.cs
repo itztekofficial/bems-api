@@ -1,6 +1,8 @@
 ﻿using Core.Models.Response;
+using Main.Services.Contracts.Admin;
+using Repositories.Contracts.Admin;
 
-namespace Admin.Services
+namespace Main.Services.Admin
 {
     /// <summary>
     /// AdminDashBoardService
